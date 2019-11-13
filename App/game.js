@@ -133,7 +133,15 @@ class Game {
 				curr.y * (this.cellSize + this.cellBorderSize) + this.map.y + (curr.sprite.offsetY || 0),
 				curr.sprite.width,
 				curr.sprite.height
-			)
+            );
+
+            ctx.fillStyle = "#A00000";
+            ctx.fillRect(
+                curr.x * (this.cellSize + this.cellBorderSize) + this.map.x,
+                curr.y * (this.cellSize + this.cellBorderSize) - this.cellBorderSize / 2 + this.map.y,
+                (this.cellSize / curr.maxHp) * curr.hp,
+                6
+            );
         }
 
         if(this.inventoryBlock){

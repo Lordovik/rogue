@@ -51,6 +51,7 @@ class Humanoid extends Point {
             sprite,
             stackable
         });
+        this.maxHp = hp;
         this.hp = hp;
         this.weapon = weapon;
         this.lastPosition = { x, y };
@@ -209,7 +210,6 @@ class Enemy extends Humanoid {
             sprite: { src: "./images/enemy.png", offsetX: 0, offsetY: 0 },
             hp
         });
-        //this.stackable = true;
         this.type = type;
         this.weapon = new Weapon( this, {type: this.type} );
     }
